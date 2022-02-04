@@ -38,7 +38,7 @@ def departmentApi(request,id=0):
     elif request.method=='DELETE':
         department=Departments.objects.get(DepartmentId=id)
         department.delete()
-        return JsonResponse("Deleted Succeffully!!", safe=False)
+        return JsonResponse("Deleted Successfully!!", safe=False)
 
 #Employees API Methods        
 
@@ -69,7 +69,7 @@ def employeeApi(request,id=0):
     elif request.method=='DELETE':
         employee=Employees.objects.get(EmployeeId=id)
         employee.delete()
-        return JsonResponse("Deleted Succeffully!!", safe=False)
+        return JsonResponse("Deleted Successfully!!", safe=False)
 
 # Vehicle API Methods
 
@@ -100,7 +100,7 @@ def vehicleApi(request,id=0):
     elif request.method=='DELETE':
         vehicle=Vehicles.objects.get(VehicleId=id)
         vehicle.delete()
-        return JsonResponse("Deleted Succeffully!!", safe=False)
+        return JsonResponse("Deleted Successfully!!", safe=False)
 
 # Save File API Methods
 @csrf_exempt
