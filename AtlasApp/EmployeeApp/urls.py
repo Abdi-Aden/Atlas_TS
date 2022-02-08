@@ -1,17 +1,17 @@
-from django.urls import path
+from django.urls import url
 from EmployeeApp import views
 
+from django.conf.urls.static import static
+from django.conf import settings
 
-# EmployeeApp/urls.py
+
 urlpatterns = [
-    path(r'^departments/$', views.departmentApi),
-    path(r'^departments/(?P<id>[0-9]+)/$', views.departmentApi),
+    url(r'^department$',views.departmentApi),
+    url(r'^department/(?P<id>[0-9]+)$',views.departmentApi),
 
-    path(r'^employees/$', views.employeeApi),
-    path(r'^employees/(?P<id>[0-9]+)/$', views.employeeApi),
+    url(r'^employee$',views.employeeApi),
+    url(r'^employee/(?P<id>[0-9]+)$',views.employeeApi),
 
-    path(r'^vehicles/$', views.vehicleApi),
-    path(r'^vehicles/(?P<id>[0-9]+)/$', views.vehicleApi),
-
-
-    ]
+    url(r'^vehicle$',views.vehicleApi),
+    url(r'^vehicle/(?P<id>[0-9]+)$',views.vehicleApi),
+]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
